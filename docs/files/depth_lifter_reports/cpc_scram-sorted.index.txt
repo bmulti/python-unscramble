@@ -1,0 +1,91 @@
+source_file = cpc_scram.py
+source_modified = 2026-11-22 17:22:17
+name(parameters) -> return  [decorators]    first line   (classes: first-last)
+
+_store_file_record(collection, file_info, one_copy, log, label)    357
+as_bool(value)    250
+attach(parent, context=None)    524
+create_ui()    520
+deep_merge(base, update)    240
+display_file_info(root, tree, code_text, mongo_uri, database_name, collection_name)    505
+highlight_python_syntax(text_widget, code)    313
+load_config()    258
+main(argv=None)    533
+parse_args(argv=None)    528
+save_config(cfg)    276
+save_file_info_to_mongo(parent=None, directory=None, client_a_uri=None, db_name=None, collection_name=None, config=None, log=None, project_name=None)    383
+class Config    284-306
+    __contains__(self, key)    287
+    __getattr__(self, name)    290
+    __getitem__(self, key)    293
+    __init__(self, cfg=None)    296
+    __setitem__(self, key, value)    299
+    get(self, key, default=None)    302
+    replace(self, cfg)    305
+class ScramApp(tk.Frame)    541-1628
+    __init__(self, master, embedded=False, host_context=None)    542
+    _append_log(self, message)    589
+    _apply_theme(self)    596
+    _attach_gateway_controller(self)    613
+    _build_browser_tab(self)    648
+    _build_config_tab(self)    718
+    _build_gateway_tab(self)    767
+    _build_guide_tab(self)    774
+    _build_log_tab(self)    794
+    _build_ui(self)    809
+    _build_ui_choices_tab(self)    836
+    _build_window(self)    965
+    _capture_current_size(self)    971
+    _choose_scan_directory(self)    976
+    _clear_scan_log(self)    990
+    _configure_code_tags(self)    995
+    _connection_label(self)    1013
+    _display_records(self, records)    1017
+    _drain_ui_queue(self)    1034
+    _format_time(value)  [@staticmethod]    1055
+    _gateway_fallback(self, message)    1061
+    _gateway_path(self)    1069
+    _on_close(self)    1073
+    _open_external(path)  [@staticmethod]    1079
+    _post_ui(self, callback, *args, **kwargs)    1087
+    _records_failed(self, error)    1091
+    _records_loaded(self, records, uri, database, collection)    1096
+    _register_and_style_comboboxes(self)    1116
+        walk(widget)    1118
+    _restore_tab(self)    1138
+    _safe_project_filename(project_name)  [@staticmethod]    1146
+    _scan_mode_label(self)    1150
+    _selected_project(self, action)    1160
+    _show_code(self, code)    1167
+    _tab_changed(self, _event=None)    1174
+    _update_current_size_label(self)    1180
+    _update_guide_state(self)    1184
+    _update_project_choices(self)    1190
+    _update_scan_mode_status(self)    1197
+    _write_log(self, message)    1201
+    apply_search(self, _event=None)    1205
+    apply_ui_choices(self)    1229
+    backup_project(self)    1264
+        worker()    1290
+            complete()    1341
+    clear_project(self)    1359
+        worker()    1381
+    clear_search(self)    1402
+    connect_custom(self)    1406
+    copy_code_selection(self, _event=None)    1422
+    copy_tree_selection(self, _event=None)    1432
+    edit_default(self)    1442
+    edit_selected_file(self, editor_path)    1446
+    launch_file_editor(self, editor_path, file_path)    1453
+    load_records(self, uri=None, database=None, collection=None)    1463
+        worker()    1475
+    on_double_click(self, event)    1490
+    on_treeview_select(self, _event=None)    1496
+    reload_config(self)    1505
+    run_selected_file(self)    1522
+    save_config_from_ui(self)    1542
+    save_ui_choices(self)    1563
+    scan_files(self)    1569
+        worker()    1596
+    selected_record(self)    1611
+    shutdown(self)    1615

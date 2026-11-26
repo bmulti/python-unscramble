@@ -1,0 +1,799 @@
+source_file = cpc_scram.py
+source_modified = 2026-11-22 17:22:17
+function()    first line;  -> what it calls    (where that comes from)    xN = times
+
+_store_file_record()    356
+    -> collection.delete_one    (local variable or parameter)
+    -> collection.find    (local variable or parameter)
+    -> collection.insert_one    (local variable or parameter)    x2
+    -> collection.update_one    (local variable or parameter)    x2
+    -> document.get    (local variable or parameter)
+    -> file_info.get    (local variable or parameter)
+    -> item.get    (unknown, not imported or defined here)
+    -> latest.get    (local variable or parameter)    x3
+    -> list    (builtin)
+    -> log    (local variable or parameter)    x5
+    -> max    (builtin)
+as_bool()    250
+    -> isinstance    (builtin)    x2
+    -> str    (builtin)
+    -> str(value).strip    (method or call on an expression)
+    -> str(value).strip().lower    (method or call on an expression)
+attach()    1613
+    -> ScramApp    (this file, line 504)
+create_ui()    1609
+    -> main    (this file, line 1622)
+deep_merge()    240
+    -> deep_merge    (this file, line 240)
+    -> dict    (builtin)
+    -> isinstance    (builtin)    x2
+    -> result.get    (local variable or parameter)
+    -> update.items    (local variable or parameter)
+display_file_info()    1594
+    -> client.admin.command    (local variable or parameter)
+    -> client.close    (local variable or parameter)
+    -> client[database_name][collection_name].…    (method or call on an expression)
+    -> item.get    (unknown, not imported or defined here)
+    -> list    (builtin)
+    -> MongoClient    (from pymongo import MongoClient)
+    -> records.sort    (local variable or parameter)
+    -> RuntimeError    (builtin)
+highlight_python_syntax()    312
+    -> any    (builtin)
+    -> code.splitlines    (local variable or parameter)
+    -> decorator.end    (local variable or parameter)
+    -> decorator.start    (local variable or parameter)
+    -> enumerate    (builtin)
+    -> line.find    (local variable or parameter)
+    -> match.end    (local variable or parameter)    x4
+    -> match.group    (local variable or parameter)
+    -> match.start    (local variable or parameter)    x5
+    -> re.finditer    (import re)    x2
+    -> re.search    (import re)    x2
+    -> string_ranges.append    (local variable or parameter)
+    -> text_widget.tag_add    (local variable or parameter)    x5
+    -> text_widget.tag_names    (local variable or parameter)
+    -> text_widget.tag_remove    (local variable or parameter)
+    -> word.isdigit    (local variable or parameter)
+load_config()    258
+    -> as_bool    (this file, line 250)    x3
+    -> cfg.get    (local variable or parameter)    x2
+    -> cfg['app'].get    (method or call on an expression)    x3
+    -> copy.deepcopy    (import copy)    x2
+    -> deep_merge    (this file, line 240)
+    -> isinstance    (builtin)
+    -> json.load    (import json)
+    -> normalize_density_name    (from cpc_ui_theme import normalize_density_name)
+    -> normalize_theme_name    (from cpc_ui_theme import normalize_theme_name)
+    -> open    (builtin)
+    -> os.path.isfile    (import os)
+main()    1622
+    -> parse_args    (this file, line 1617)
+    -> root.mainloop    (local variable or parameter)
+    -> ScramApp    (this file, line 504)
+    -> tk.Tk    (import tkinter as tk)
+parse_args()    1617
+    -> argparse.ArgumentParser    (import argparse)
+    -> parser.parse_args    (local variable or parameter)
+save_config()    276
+    -> json.dump    (import json)
+    -> open    (builtin)
+    -> os.replace    (import os)
+save_file_info_to_mongo()    382
+    -> _store_file_record    (this file, line 356)
+    -> app.get    (local variable or parameter)    x7
+    -> as_bool    (this file, line 250)    x3
+    -> callable    (builtin)
+    -> client.close    (local variable or parameter)
+    -> clients.append    (local variable or parameter)    x2
+    -> collection.create_index    (local variable or parameter)
+    -> collection.delete_many    (local variable or parameter)
+    -> collections.append    (local variable or parameter)    x2
+    -> filename.endswith    (local variable or parameter)
+    -> filename.startswith    (local variable or parameter)    x2
+    -> FileNotFoundError    (builtin)
+    -> load_config    (this file, line 258)
+    -> MongoClient    (from pymongo import MongoClient)    x2
+    -> open    (builtin)
+    -> os.path.isdir    (import os)
+    -> os.path.join    (import os)
+    -> os.stat    (import os)
+    -> os.walk    (import os)
+    -> primary_client.admin.command    (local variable or parameter)
+    -> RuntimeError    (builtin)
+    -> secondary_client.admin.command    (local variable or parameter)
+    -> source.read    (local variable or parameter)
+    -> str    (builtin)    x5
+    -> str(app.get('SECONDARY_MONGO', '')).str…    (method or call on an expression)
+    -> str(project_name or '').strip    (method or call on an expression)
+    -> ValueError    (builtin)
+    -> write_log    (local variable or parameter)    x12
+class Config    284-305
+    __contains__()    301
+        -> self.cfg.get    (attribute of self (inherited or set at run time))
+    __getattr__()    292
+        -> self.cfg.get    (attribute of self (inherited or set at run time))
+        -> self.cfg.get('app', {}).get    (method or call on an expression)
+    __getitem__()    295
+        -> self.cfg.get    (attribute of self (inherited or set at run time))
+        -> self.cfg.get('app', {}).get    (method or call on an expression)
+    __init__()    286
+        -> load_config    (this file, line 258)
+    __setitem__()    298
+        -> self.cfg.setdefault    (attribute of self (inherited or set at run time))
+    get()    304
+        -> self.cfg.get    (attribute of self (inherited or set at run time))
+        -> self.cfg.get('app', {}).get    (method or call on an expression)
+    replace()    289
+class ScramApp    504-1591
+    __init__()    505
+        -> apply_app_icon    (from cpc_ui_theme import apply_app_icon)
+        -> bool    (builtin)    x3
+        -> c.replace    (unknown, not imported or defined here)
+        -> dict    (builtin)
+        -> isinstance    (builtin)
+        -> load_config    (this file, line 258)
+        -> master.winfo_toplevel    (local variable or parameter)
+        -> normalize_density_name    (from cpc_ui_theme import normalize_density_name)
+        -> normalize_theme_name    (from cpc_ui_theme import normalize_theme_name)
+        -> queue.Queue    (import queue)
+        -> self._apply_theme    (this class, line 1481)
+        -> self._build_ui    (this class, line 558)
+        -> self._build_window    (this class, line 552)
+        -> self._restore_tab    (this class, line 1560)
+        -> self.after    (attribute of self (inherited or set at run time))
+        -> self.after_idle    (attribute of self (inherited or set at run time))    x2
+        -> self.host_context.get    (attribute of self (inherited or set at run time))    x6
+        -> self.pack    (attribute of self (inherited or set at run time))
+        -> self.window.deiconify    (attribute of self (inherited or set at run time))
+        -> self.window.protocol    (attribute of self (inherited or set at run time))
+        -> self.window.withdraw    (attribute of self (inherited or set at run time))
+        -> super().__init__    (parent class)
+    _append_log()    699
+        -> self.log_text.configure    (attribute of self (inherited or set at run time))    x2
+        -> self.log_text.insert    (attribute of self (inherited or set at run time))
+        -> self.log_text.see    (attribute of self (inherited or set at run time))
+        -> self.log_text.winfo_exists    (attribute of self (inherited or set at run time))
+        -> str    (builtin)
+    _apply_theme()    1481
+        -> apply_theme    (from cpc_ui_theme import apply_theme)
+        -> dict    (builtin)
+        -> normalize_density_name    (from cpc_ui_theme import normalize_density_name)
+        -> normalize_theme_name    (from cpc_ui_theme import normalize_theme_name)
+        -> self._configure_code_tags    (this class, line 1498)
+        -> self._register_and_style_comboboxes    (this class, line 1516)
+        -> self.cfg.get    (attribute of self (inherited or set at run time))    x2
+        -> self.colors.get    (attribute of self (inherited or set at run time))    x2
+        -> self.host_context.get    (attribute of self (inherited or set at run time))
+        -> self.tree.tag_configure    (attribute of self (inherited or set at run time))    x2
+        -> theme_palette    (from cpc_ui_theme import theme_palette)    x2
+    _attach_gateway_controller()    915
+        -> attach_function    (local variable or parameter)
+        -> callable    (builtin)
+        -> controller_class    (local variable or parameter)
+        -> getattr    (builtin)    x2
+        -> inspect.signature    (import inspect)
+        -> name.lower    (local variable or parameter)
+        -> self._gateway_fallback    (this class, line 950)    x3
+        -> self.cfg.get    (attribute of self (inherited or set at run time))    x2
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> signature.parameters.items    (local variable or parameter)
+        -> str    (builtin)
+        -> TypeError    (builtin)
+    _build_browser_tab()    585
+        -> browser_notes.pack    (local variable or parameter)
+        -> build_treeview    (from cpc_treeviews import build_treeview)
+        -> code_frame.columnconfigure    (local variable or parameter)
+        -> code_frame.rowconfigure    (local variable or parameter)
+        -> code_horizontal.grid    (local variable or parameter)
+        -> code_vertical.grid    (local variable or parameter)
+        -> paned.add    (local variable or parameter)    x2
+        -> paned.pack    (local variable or parameter)
+        -> search.pack    (local variable or parameter)
+        -> search_entry.bind    (local variable or parameter)
+        -> search_entry.pack    (local variable or parameter)
+        -> self._configure_code_tags    (this class, line 1498)
+        -> self._connection_label    (this class, line 958)
+        -> self._scan_mode_label    (this class, line 962)
+        -> self.code_text.bind    (attribute of self (inherited or set at run time))
+        -> self.code_text.configure    (attribute of self (inherited or set at run time))    x2
+        -> self.code_text.grid    (attribute of self (inherited or set at run time))
+        -> self.project_combo.bind    (attribute of self (inherited or set at run time))
+        -> self.project_combo.pack    (attribute of self (inherited or set at run time))
+        -> self.tree.bind    (attribute of self (inherited or set at run time))
+        -> tk.BooleanVar    (import tkinter as tk)    x2
+        -> tk.StringVar    (import tkinter as tk)    x5
+        -> tk.Text    (import tkinter as tk)
+        -> toolbar.pack    (local variable or parameter)
+        -> tree_frame.columnconfigure    (local variable or parameter)
+        -> tree_frame.rowconfigure    (local variable or parameter)
+        -> ttk.Button    (from tkinter import ttk)    x9
+        -> ttk.Button(search, text='X', width=3, c…    (method or call on an expression)
+        -> ttk.Button(toolbar, text='Backup Projec…    (method or call on an expression)
+        -> ttk.Button(toolbar, text='Browse Scan D…    (method or call on an expression)
+        -> ttk.Button(toolbar, text='Clear Project…    (method or call on an expression)
+        -> ttk.Button(toolbar, text='Connect To', …    (method or call on an expression)
+        -> ttk.Button(toolbar, text='Default Edito…    (method or call on an expression)
+        -> ttk.Button(toolbar, text='Refresh Data'…    (method or call on an expression)
+        -> ttk.Button(toolbar, text='Run', command…    (method or call on an expression)
+        -> ttk.Button(toolbar, text='Scan Files', …    (method or call on an expression)
+        -> ttk.Checkbutton    (from tkinter import ttk)    x2
+        -> ttk.Checkbutton(search, text='Code', va…    (method or call on an expression)
+        -> ttk.Checkbutton(search, text='Filename …    (method or call on an expression)
+        -> ttk.Combobox    (from tkinter import ttk)
+        -> ttk.Entry    (from tkinter import ttk)
+        -> ttk.Frame    (from tkinter import ttk)    x5
+        -> ttk.Label    (from tkinter import ttk)    x6
+        -> ttk.Label(browser_notes, text=' | ').pa…    (method or call on an expression)
+        -> ttk.Label(browser_notes, textvariable=s…    (method or call on an expression)    x2
+        -> ttk.Label(search, text='Projects Found'…    (method or call on an expression)
+        -> ttk.Label(search, text='Search').pack    (method or call on an expression)
+        -> ttk.Label(self.browser_tab, textvariabl…    (method or call on an expression)
+        -> ttk.Panedwindow    (from tkinter import ttk)
+        -> ttk.Scrollbar    (from tkinter import ttk)    x2
+    _build_config_tab()    730
+        -> as_bool    (this file, line 250)    x3
+        -> canvas.bbox    (local variable or parameter)
+        -> canvas.bind    (local variable or parameter)
+        -> canvas.configure    (local variable or parameter)    x2
+        -> canvas.create_window    (local variable or parameter)
+        -> canvas.itemconfigure    (local variable or parameter)
+        -> canvas.pack    (local variable or parameter)
+        -> form.bind    (local variable or parameter)
+        -> form.columnconfigure    (local variable or parameter)
+        -> outer.pack    (local variable or parameter)
+        -> scrollbar.pack    (local variable or parameter)
+        -> self._open_external    (this class, line 1552)
+        -> self.cfg['app'].get    (method or call on an expression)    x4
+        -> str    (builtin)
+        -> tk.BooleanVar    (import tkinter as tk)    x3
+        -> tk.Canvas    (import tkinter as tk)
+        -> tk.StringVar    (import tkinter as tk)    x2
+        -> ttk.Button    (from tkinter import ttk)    x4
+        -> ttk.Button(form, text='Browse', command…    (method or call on an expression)
+        -> ttk.Button(form, text='Edit JSON', comm…    (method or call on an expression)
+        -> ttk.Button(form, text='Load Config', co…    (method or call on an expression)
+        -> ttk.Button(form, text='Save Config', co…    (method or call on an expression)
+        -> ttk.Checkbutton    (from tkinter import ttk)    x3
+        -> ttk.Checkbutton(form, text='Clear Data …    (method or call on an expression)
+        -> ttk.Checkbutton(form, text='Do not read…    (method or call on an expression)
+        -> ttk.Checkbutton(form, text='Keep only o…    (method or call on an expression)
+        -> ttk.Entry    (from tkinter import ttk)    x2
+        -> ttk.Entry(form, state='readonly', textv…    (method or call on an expression)
+        -> ttk.Entry(form, textvariable=variable).…    (method or call on an expression)
+        -> ttk.Frame    (from tkinter import ttk)    x2
+        -> ttk.Label    (from tkinter import ttk)    x3
+        -> ttk.Label(form, text='Application Confi…    (method or call on an expression)
+        -> ttk.Label(form, text='Config file').grid    (method or call on an expression)
+        -> ttk.Label(form, text=label).grid    (method or call on an expression)
+        -> ttk.Scrollbar    (from tkinter import ttk)
+    _build_gateway_tab()    908
+        -> self.after_idle    (attribute of self (inherited or set at run time))
+        -> self.gateway_host.grid    (attribute of self (inherited or set at run time))
+        -> self.gateway_tab.columnconfigure    (attribute of self (inherited or set at run time))
+        -> self.gateway_tab.rowconfigure    (attribute of self (inherited or set at run time))
+        -> ttk.Frame    (from tkinter import ttk)
+    _build_guide_tab()    710
+        -> enumerate    (builtin)
+        -> frame.pack    (local variable or parameter)
+        -> process.pack    (local variable or parameter)
+        -> self._update_guide_state    (this class, line 1434)
+        -> state.pack    (local variable or parameter)
+        -> tk.StringVar    (import tkinter as tk)    x5
+        -> ttk.Frame    (from tkinter import ttk)
+        -> ttk.Label    (from tkinter import ttk)    x5
+        -> ttk.Label(frame, text='SCRAMBLE — proce…    (method or call on an expression)
+        -> ttk.Label(frame, text=LONG_DESC, wraple…    (method or call on an expression)
+        -> ttk.Label(process, text='Scan matching …    (method or call on an expression)
+        -> ttk.Label(state, text=label, font=('TkD…    (method or call on an expression)
+        -> ttk.Label(state, textvariable=variable,…    (method or call on an expression)
+        -> ttk.LabelFrame    (from tkinter import ttk)    x2
+    _build_log_tab()    655
+        -> log_frame.columnconfigure    (local variable or parameter)
+        -> log_frame.pack    (local variable or parameter)
+        -> log_frame.rowconfigure    (local variable or parameter)
+        -> log_vertical.grid    (local variable or parameter)
+        -> self.log_text.configure    (attribute of self (inherited or set at run time))
+        -> self.log_text.grid    (attribute of self (inherited or set at run time))
+        -> tk.Text    (import tkinter as tk)
+        -> toolbar.pack    (local variable or parameter)
+        -> ttk.Button    (from tkinter import ttk)
+        -> ttk.Button(toolbar, text='Clear Log', c…    (method or call on an expression)
+        -> ttk.Frame    (from tkinter import ttk)    x2
+        -> ttk.Label    (from tkinter import ttk)
+        -> ttk.Label(toolbar, text='File scanning …    (method or call on an expression)
+        -> ttk.Scrollbar    (from tkinter import ttk)
+    _build_ui()    558
+        -> self._build_browser_tab    (this class, line 585)
+        -> self._build_config_tab    (this class, line 730)
+        -> self._build_gateway_tab    (this class, line 908)
+        -> self._build_guide_tab    (this class, line 710)
+        -> self._build_log_tab    (this class, line 655)
+        -> self._build_ui_choices_tab    (this class, line 779)
+        -> self.notebook.add    (attribute of self (inherited or set at run time))    x6
+        -> self.notebook.bind    (attribute of self (inherited or set at run time))
+        -> self.notebook.pack    (attribute of self (inherited or set at run time))
+        -> ttk.Frame    (from tkinter import ttk)    x6
+        -> ttk.Notebook    (from tkinter import ttk)
+    _build_ui_choices_tab()    779
+        -> appearance.columnconfigure    (local variable or parameter)
+        -> appearance.pack    (local variable or parameter)
+        -> density_frame.grid    (local variable or parameter)
+        -> density_names    (from cpc_ui_theme import density_names)
+        -> getattr    (builtin)    x3
+        -> outer.pack    (local variable or parameter)
+        -> self._comboboxes.append    (attribute of self (inherited or set at run time))
+        -> self._update_current_size_label    (this class, line 1543)
+        -> self.cfg.get    (attribute of self (inherited or set at run time))    x6
+        -> size_frame.pack    (local variable or parameter)
+        -> str    (builtin)    x4
+        -> sys.modules.get    (import sys)
+        -> theme_box.grid    (local variable or parameter)
+        -> theme_names    (from cpc_ui_theme import theme_names)
+        -> tk.StringVar    (import tkinter as tk)    x8
+        -> ttk.Button    (from tkinter import ttk)    x2
+        -> ttk.Button(outer, text='Apply + Save', …    (method or call on an expression)
+        -> ttk.Button(size_frame, text='Use Curren…    (method or call on an expression)
+        -> ttk.Combobox    (from tkinter import ttk)
+        -> ttk.Entry    (from tkinter import ttk)    x2
+        -> ttk.Entry(size_frame, textvariable=self…    (method or call on an expression)    x2
+        -> ttk.Frame    (from tkinter import ttk)    x2
+        -> ttk.Label    (from tkinter import ttk)    x6
+        -> ttk.Label(appearance, text='Density').g…    (method or call on an expression)
+        -> ttk.Label(appearance, text='Theme').grid    (method or call on an expression)
+        -> ttk.Label(size_frame, text='Current Siz…    (method or call on an expression)
+        -> ttk.Label(size_frame, text='Window Heig…    (method or call on an expression)
+        -> ttk.Label(size_frame, text='Window Widt…    (method or call on an expression)
+        -> ttk.Label(size_frame, textvariable=self…    (method or call on an expression)
+        -> ttk.LabelFrame    (from tkinter import ttk)    x2
+        -> ttk.Radiobutton    (from tkinter import ttk)
+        -> ttk.Radiobutton(density_frame, text=val…    (method or call on an expression)
+        -> ui_choices.attach    (import cpc_ui_choices as ui_choices)
+    _build_window()    552
+        -> int    (builtin)    x2
+        -> self.cfg.get    (attribute of self (inherited or set at run time))    x2
+        -> self.window.geometry    (attribute of self (inherited or set at run time))
+        -> self.window.minsize    (attribute of self (inherited or set at run time))
+        -> self.window.title    (attribute of self (inherited or set at run time))
+    _capture_current_size()    1538
+        -> self._update_current_size_label    (this class, line 1543)
+        -> self.height_var.set    (attribute of self (inherited or set at run time))
+        -> self.width_var.set    (attribute of self (inherited or set at run time))
+        -> self.window.winfo_height    (attribute of self (inherited or set at run time))
+        -> self.window.winfo_width    (attribute of self (inherited or set at run time))
+        -> str    (builtin)    x2
+    _choose_scan_directory()    1382
+        -> c.replace    (unknown, not imported or defined here)
+        -> filedialog.askdirectory    (from tkinter import filedialog)
+        -> hasattr    (builtin)    x2
+        -> save_config    (this file, line 276)
+        -> self._write_log    (this class, line 706)
+        -> self.cfg['app'].get    (method or call on an expression)
+        -> self.config_vars['DIR_TO_SEARCH'].get    (method or call on an expression)
+        -> self.config_vars['DIR_TO_SEARCH'].set    (method or call on an expression)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> str    (builtin)
+    _clear_scan_log()    670
+        -> self.log_text.configure    (attribute of self (inherited or set at run time))    x2
+        -> self.log_text.delete    (attribute of self (inherited or set at run time))
+    _configure_code_tags()    1498
+        -> hasattr    (builtin)
+        -> highlight_python_syntax    (this file, line 312)
+        -> int    (builtin)
+        -> palette.get    (local variable or parameter)    x2
+        -> self.cfg.get    (attribute of self (inherited or set at run time))    x2
+        -> self.cfg.get('app', {}).get    (method or call on an expression)
+        -> self.code_text.configure    (attribute of self (inherited or set at run time))
+        -> self.code_text.get    (attribute of self (inherited or set at run time))
+        -> self.code_text.tag_configure    (attribute of self (inherited or set at run time))
+        -> str    (builtin)    x2
+        -> theme_palette    (from cpc_ui_theme import theme_palette)
+        -> tkFont.Font    (import tkinter.font as tkFont)    x3
+    _connection_label()    958
+    _display_records()    1028
+        -> enumerate    (builtin)
+        -> insert_row    (from cpc_treeviews import insert_row)
+        -> list    (builtin)
+        -> record.get    (local variable or parameter)    x6
+        -> self._format_time    (this class, line 1060)    x3
+        -> self._item_records.clear    (attribute of self (inherited or set at run time))
+        -> self._show_code    (this class, line 1103)
+        -> self.on_treeview_select    (this class, line 1094)
+        -> self.tree.delete    (attribute of self (inherited or set at run time))
+        -> self.tree.focus    (attribute of self (inherited or set at run time))
+        -> self.tree.get_children    (attribute of self (inherited or set at run time))    x2
+        -> self.tree.see    (attribute of self (inherited or set at run time))
+        -> self.tree.selection_set    (attribute of self (inherited or set at run time))
+        -> str    (builtin)
+    _drain_ui_queue()    679
+        -> callback    (local variable or parameter)
+        -> self._ui_queue.get_nowait    (attribute of self (inherited or set at run time))
+        -> self.after    (attribute of self (inherited or set at run time))
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> self.winfo_exists    (attribute of self (inherited or set at run time))
+    _format_time()    1060
+        -> float    (builtin)
+        -> time.localtime    (import time)
+        -> time.strftime    (import time)
+    _gateway_fallback()    950
+        -> child.destroy    (local variable or parameter)
+        -> self._gateway_path    (this class, line 1547)    x2
+        -> self._open_external    (this class, line 1552)
+        -> self.gateway_host.winfo_children    (attribute of self (inherited or set at run time))
+        -> ttk.Button    (from tkinter import ttk)
+        -> ttk.Button(self.gateway_host, text='Ope…    (method or call on an expression)
+        -> ttk.Label    (from tkinter import ttk)    x3
+        -> ttk.Label(self.gateway_host, text='Gate…    (method or call on an expression)
+        -> ttk.Label(self.gateway_host, text=messa…    (method or call on an expression)
+        -> ttk.Label(self.gateway_host, text=self.…    (method or call on an expression)
+    _gateway_path()    1547
+        -> os.path.isabs    (import os)
+        -> os.path.join    (import os)
+        -> self.cfg.get    (attribute of self (inherited or set at run time))
+        -> self.cfg.get('gateway', {}).get    (method or call on an expression)
+    _on_close()    1588
+        -> self.shutdown    (this class, line 1573)
+        -> self.window.destroy    (attribute of self (inherited or set at run time))
+    _open_external()    1552
+        -> os.startfile    (import os)
+        -> subprocess.Popen    (import subprocess)    x2
+        -> sys.platform.startswith    (import sys)
+    _post_ui()    675
+        -> self._ui_queue.put    (attribute of self (inherited or set at run time))
+    _records_failed()    1023
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+    _records_loaded()    1003
+        -> len    (builtin)    x3
+        -> self._update_project_choices    (this class, line 1045)
+        -> self.apply_search    (this class, line 1066)
+        -> self.connection_var.set    (attribute of self (inherited or set at run time))
+        -> self.guide_collection_var.set    (attribute of self (inherited or set at run time))
+        -> self.guide_primary_var.set    (attribute of self (inherited or set at run time))
+        -> self.guide_records_var.set    (attribute of self (inherited or set at run time))
+        -> self.status_var.set    (attribute of self (inherited or set at run time))    x2
+        -> str    (builtin)
+    _register_and_style_comboboxes()    1516
+        -> combo.configure    (local variable or parameter)
+        -> self._comboboxes.append    (attribute of self (inherited or set at run time))
+        -> style.configure    (local variable or parameter)
+        -> style.lookup    (local variable or parameter)    x2
+        -> style.map    (local variable or parameter)
+        -> ttk.Style    (from tkinter import ttk)
+        -> walk    (local variable or parameter)
+        walk()    1518
+            -> found.append    (unknown, not imported or defined here)
+            -> isinstance    (builtin)
+            -> walk    (unknown, not imported or defined here)
+            -> widget.winfo_children    (local variable or parameter)
+    _restore_tab()    1560
+        -> range    (builtin)
+        -> self.cfg.get    (attribute of self (inherited or set at run time))
+        -> self.notebook.index    (attribute of self (inherited or set at run time))
+        -> self.notebook.select    (attribute of self (inherited or set at run time))
+        -> self.notebook.tab    (attribute of self (inherited or set at run time))
+    _safe_project_filename()    1157
+        -> re.sub    (import re)
+        -> re.sub('[<>:"/\\\\|?*\\x00-\\x1f]+', '_…    (method or call on an expression)
+    _scan_mode_label()    962
+        -> app.get    (local variable or parameter)    x5
+        -> as_bool    (this file, line 250)    x3
+        -> f'mask {start_mask!r} {end_mask!r}'.rst…    (method or call on an expression)
+        -> str    (builtin)    x2
+    _selected_project()    1052
+        -> messagebox.showwarning    (from tkinter import messagebox)
+        -> self.project_filter_var.get    (attribute of self (inherited or set at run time))
+        -> self.project_filter_var.get().strip    (method or call on an expression)
+    _show_code()    1103
+        -> highlight_python_syntax    (this file, line 312)
+        -> self.code_text.configure    (attribute of self (inherited or set at run time))    x2
+        -> self.code_text.delete    (attribute of self (inherited or set at run time))
+        -> self.code_text.insert    (attribute of self (inherited or set at run time))
+    _tab_changed()    1567
+        -> self.notebook.select    (attribute of self (inherited or set at run time))
+        -> self.notebook.tab    (attribute of self (inherited or set at run time))
+    _update_current_size_label()    1543
+        -> hasattr    (builtin)
+        -> self.current_size_var.set    (attribute of self (inherited or set at run time))
+        -> self.window.winfo_height    (attribute of self (inherited or set at run time))
+        -> self.window.winfo_width    (attribute of self (inherited or set at run time))
+    _update_guide_state()    1434
+        -> self.guide_collection_var.set    (attribute of self (inherited or set at run time))
+        -> self.guide_primary_var.set    (attribute of self (inherited or set at run time))
+        -> self.guide_secondary_var.set    (attribute of self (inherited or set at run time))
+    _update_project_choices()    1045
+        -> record.get    (local variable or parameter)    x2
+        -> self.project_combo.configure    (attribute of self (inherited or set at run time))
+        -> self.project_filter_var.get    (attribute of self (inherited or set at run time))
+        -> self.project_filter_var.set    (attribute of self (inherited or set at run time))
+        -> sorted    (builtin)
+        -> str    (builtin)    x2
+        -> str(record.get('project_name', '')).str…    (method or call on an expression)    x2
+    _update_scan_mode_status()    972
+        -> hasattr    (builtin)
+        -> self._scan_mode_label    (this class, line 962)
+        -> self.scan_mode_var.set    (attribute of self (inherited or set at run time))
+    _write_log()    706
+        -> self._post_ui    (this class, line 675)
+        -> str    (builtin)
+    apply_search()    1066
+        -> ' '.join    (method or call on an expression)
+        -> ' '.join(fields).lower    (method or call on an expression)
+        -> all    (builtin)
+        -> fields.append    (local variable or parameter)
+        -> fields.extend    (local variable or parameter)
+        -> len    (builtin)    x3
+        -> query.split    (local variable or parameter)
+        -> record.get    (local variable or parameter)    x4
+        -> results.append    (local variable or parameter)
+        -> self._display_records    (this class, line 1028)    x3
+        -> self.project_filter_var.get    (attribute of self (inherited or set at run time))
+        -> self.project_filter_var.get().strip    (method or call on an expression)
+        -> self.search_code_var.get    (attribute of self (inherited or set at run time))    x2
+        -> self.search_name_var.get    (attribute of self (inherited or set at run time))    x2
+        -> self.search_var.get    (attribute of self (inherited or set at run time))
+        -> self.search_var.get().strip    (method or call on an expression)
+        -> self.search_var.get().strip().lower    (method or call on an expression)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))    x2
+        -> str    (builtin)    x4
+        -> str(record.get('project_name', '')).str…    (method or call on an expression)
+    apply_ui_choices()    1440
+        -> hasattr    (builtin)    x3
+        -> int    (builtin)    x4
+        -> max    (builtin)    x4
+        -> messagebox.showwarning    (from tkinter import messagebox)
+        -> normalize_density_name    (from cpc_ui_theme import normalize_density_name)    x2
+        -> normalize_theme_name    (from cpc_ui_theme import normalize_theme_name)    x2
+        -> self._apply_theme    (this class, line 1481)
+        -> self._update_current_size_label    (this class, line 1543)
+        -> self.density_var.get    (attribute of self (inherited or set at run time))
+        -> self.height_var.get    (attribute of self (inherited or set at run time))    x2
+        -> self.host_context.get    (attribute of self (inherited or set at run time))    x4
+        -> self.theme_var.get    (attribute of self (inherited or set at run time))
+        -> self.width_var.get    (attribute of self (inherited or set at run time))    x2
+        -> self.window.geometry    (attribute of self (inherited or set at run time))
+    backup_project()    1161
+        -> copy.deepcopy    (import copy)
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> messagebox.showwarning    (from tkinter import messagebox)    x2
+        -> os.path.abspath    (import os)
+        -> os.path.isdir    (import os)
+        -> os.path.join    (import os)    x2
+        -> record.get    (local variable or parameter)
+        -> self._clear_scan_log    (this class, line 670)
+        -> self._project_thread.is_alive    (attribute of self (inherited or set at run time))
+        -> self._project_thread.start    (attribute of self (inherited or set at run time))
+        -> self._safe_project_filename    (this class, line 1157)
+        -> self._selected_project    (this class, line 1052)
+        -> self._write_log    (this class, line 706)    x2
+        -> self.cfg['app'].get    (method or call on an expression)
+        -> self.notebook.select    (attribute of self (inherited or set at run time))
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> str    (builtin)    x2
+        -> str(record.get('project_name', '')).str…    (method or call on an expression)
+        -> threading.Thread    (import threading)
+        -> time.strftime    (import time)
+        worker()    1187
+            -> archive.write    (local variable or parameter)
+            -> archive.writestr    (local variable or parameter)
+            -> backup_collection.insert_one    (local variable or parameter)
+            -> client.admin.command    (local variable or parameter)
+            -> client.close    (local variable or parameter)
+            -> current.get    (local variable or parameter)
+            -> float    (builtin)    x2
+            -> json.dumps    (import json)
+            -> len    (builtin)    x2
+            -> missing_files.append    (local variable or parameter)
+            -> MongoClient    (from pymongo import MongoClient)
+            -> os.makedirs    (import os)
+            -> os.path.abspath    (import os)
+            -> os.path.basename    (import os)    x2
+            -> os.path.isfile    (import os)
+            -> os.path.join    (import os)
+            -> os.path.join(safe_name, relative_path).…    (method or call on an expression)
+            -> os.path.relpath    (import os)
+            -> os.stat    (import os)
+            -> record.get    (local variable or parameter)    x2
+            -> relative_path.startswith    (local variable or parameter)
+            -> self._post_ui    (this class, line 675)    x3
+            -> self._write_log    (this class, line 706)    x5
+            -> sorted    (builtin)
+            -> stored_files.append    (local variable or parameter)
+            -> str    (builtin)
+            -> time.time    (import time)
+            -> unique_records.get    (local variable or parameter)
+            -> zipfile.ZipFile    (import zipfile)
+            complete()    1238
+                -> len    (builtin)
+                -> messagebox.showinfo    (from tkinter import messagebox)
+                -> messagebox.showwarning    (from tkinter import messagebox)
+                -> self.status_var.set    (attribute of self (inherited or set at run time))
+    clear_project()    1256
+        -> messagebox.askyesno    (from tkinter import messagebox)
+        -> messagebox.showwarning    (from tkinter import messagebox)
+        -> self._clear_scan_log    (this class, line 670)
+        -> self._project_thread.is_alive    (attribute of self (inherited or set at run time))
+        -> self._project_thread.start    (attribute of self (inherited or set at run time))
+        -> self._write_log    (this class, line 706)
+        -> self.notebook.select    (attribute of self (inherited or set at run time))
+        -> self.project_filter_var.get    (attribute of self (inherited or set at run time))
+        -> self.project_filter_var.get().strip    (method or call on an expression)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))    x2
+        -> threading.Thread    (import threading)
+        worker()    1278
+            -> client.admin.command    (local variable or parameter)
+            -> client.close    (local variable or parameter)
+            -> client[database][collection].delete_many    (method or call on an expression)
+            -> MongoClient    (from pymongo import MongoClient)
+            -> self._post_ui    (this class, line 675)    x3
+            -> self._write_log    (this class, line 706)    x2
+    clear_search()    1090
+        -> self.apply_search    (this class, line 1066)
+        -> self.search_var.set    (attribute of self (inherited or set at run time))
+    connect_custom()    1140
+        -> collection.strip    (local variable or parameter)    x2
+        -> database.strip    (local variable or parameter)    x2
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> self.load_records    (this class, line 976)
+        -> simpledialog.askstring    (from tkinter import simpledialog)    x3
+        -> uri.strip    (local variable or parameter)    x2
+    copy_code_selection()    1110
+        -> self.clipboard_append    (attribute of self (inherited or set at run time))
+        -> self.clipboard_clear    (attribute of self (inherited or set at run time))
+        -> self.code_text.get    (attribute of self (inherited or set at run time))
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+    copy_tree_selection()    1120
+        -> '\n'.join    (method or call on an expression)
+        -> '\t'.join    (method or call on an expression)
+        -> len    (builtin)    x2
+        -> self.clipboard_append    (attribute of self (inherited or set at run time))
+        -> self.clipboard_clear    (attribute of self (inherited or set at run time))
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> self.tree.item    (attribute of self (inherited or set at run time))
+        -> self.tree.selection    (attribute of self (inherited or set at run time))
+        -> str    (builtin)
+    edit_default()    1341
+        -> self.cfg['app'].get    (method or call on an expression)    x2
+        -> self.edit_selected_file    (this class, line 1345)
+        -> str    (builtin)    x2
+    edit_selected_file()    1345
+        -> messagebox.showwarning    (from tkinter import messagebox)
+        -> record.get    (local variable or parameter)
+        -> self.launch_file_editor    (this class, line 1352)
+        -> self.selected_record    (this class, line 1130)
+        -> str    (builtin)
+    launch_file_editor()    1352
+        -> messagebox.showerror    (from tkinter import messagebox)    x2
+        -> os.path.dirname    (import os)
+        -> os.path.isfile    (import os)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> subprocess.Popen    (import subprocess)
+    load_records()    976
+        -> self.status_var.set    (attribute of self (inherited or set at run time))    x2
+        -> threading.Thread    (import threading)
+        -> threading.Thread(target=worker, daemon=…    (method or call on an expression)
+        worker()    988
+            -> client.admin.command    (local variable or parameter)
+            -> client.close    (local variable or parameter)
+            -> client[database][collection].find    (method or call on an expression)
+            -> item.get    (unknown, not imported or defined here)
+            -> list    (builtin)
+            -> MongoClient    (from pymongo import MongoClient)
+            -> records.sort    (local variable or parameter)
+            -> self._post_ui    (this class, line 675)    x2
+    on_double_click()    1134
+        -> self.edit_default    (this class, line 1341)
+        -> self.run_selected_file    (this class, line 1362)
+        -> self.tree.identify_row    (attribute of self (inherited or set at run time))
+        -> self.tree.selection_set    (attribute of self (inherited or set at run time))
+    on_treeview_select()    1094
+        -> record.get    (local variable or parameter)    x3
+        -> self._show_code    (this class, line 1103)
+        -> self.guide_selected_var.set    (attribute of self (inherited or set at run time))
+        -> self.selected_record    (this class, line 1130)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> str    (builtin)    x3
+    reload_config()    1417
+        -> as_bool    (this file, line 250)    x3
+        -> c.replace    (unknown, not imported or defined here)
+        -> hasattr    (builtin)
+        -> load_config    (this file, line 258)
+        -> self._apply_theme    (this class, line 1481)
+        -> self._connection_label    (this class, line 958)
+        -> self._update_guide_state    (this class, line 1434)
+        -> self._update_scan_mode_status    (this class, line 972)
+        -> self.cfg.get    (attribute of self (inherited or set at run time))    x2
+        -> self.cfg['app'].get    (method or call on an expression)    x4
+        -> self.clear_data_var.set    (attribute of self (inherited or set at run time))
+        -> self.config_vars.items    (attribute of self (inherited or set at run time))
+        -> self.connection_var.set    (attribute of self (inherited or set at run time))
+        -> self.density_var.set    (attribute of self (inherited or set at run time))
+        -> self.no_store_var.set    (attribute of self (inherited or set at run time))
+        -> self.one_copy_var.set    (attribute of self (inherited or set at run time))
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> self.theme_var.set    (attribute of self (inherited or set at run time))
+        -> str    (builtin)
+        -> variable.set    (local variable or parameter)
+    run_selected_file()    1362
+        -> getattr    (builtin)
+        -> messagebox.showerror    (from tkinter import messagebox)    x3
+        -> messagebox.showwarning    (from tkinter import messagebox)
+        -> os.path.dirname    (import os)
+        -> os.path.isfile    (import os)    x2
+        -> record.get    (local variable or parameter)
+        -> self.cfg['app'].get    (method or call on an expression)
+        -> self.selected_record    (this class, line 1130)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> str    (builtin)    x2
+        -> subprocess.Popen    (import subprocess)
+        -> sys.platform.startswith    (import sys)
+    save_config_from_ui()    1396
+        -> bool    (builtin)    x3
+        -> c.replace    (unknown, not imported or defined here)
+        -> int    (builtin)
+        -> max    (builtin)
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> min    (builtin)
+        -> save_config    (this file, line 276)
+        -> self._configure_code_tags    (this class, line 1498)
+        -> self._connection_label    (this class, line 958)
+        -> self._update_guide_state    (this class, line 1434)
+        -> self._update_scan_mode_status    (this class, line 972)
+        -> self.clear_data_var.get    (attribute of self (inherited or set at run time))
+        -> self.config_vars.items    (attribute of self (inherited or set at run time))
+        -> self.connection_var.set    (attribute of self (inherited or set at run time))
+        -> self.no_store_var.get    (attribute of self (inherited or set at run time))
+        -> self.one_copy_var.get    (attribute of self (inherited or set at run time))
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> variable.get    (local variable or parameter)
+        -> variable.get().strip    (method or call on an expression)
+    save_ui_choices()    1475
+        -> save_config    (this file, line 276)
+        -> self.apply_ui_choices    (this class, line 1440)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+    scan_files()    1299
+        -> as_bool    (this file, line 250)
+        -> messagebox.askyesno    (from tkinter import messagebox)
+        -> messagebox.showwarning    (from tkinter import messagebox)    x2
+        -> project_name.strip    (local variable or parameter)
+        -> self._clear_scan_log    (this class, line 670)
+        -> self._scan_thread.is_alive    (attribute of self (inherited or set at run time))
+        -> self._scan_thread.start    (attribute of self (inherited or set at run time))
+        -> self.cfg['app'].get    (method or call on an expression)
+        -> self.notebook.select    (attribute of self (inherited or set at run time))
+        -> self.project_filter_var.get    (attribute of self (inherited or set at run time))
+        -> self.project_filter_var.get().strip    (method or call on an expression)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))    x3
+        -> simpledialog.askstring    (from tkinter import simpledialog)
+        -> threading.Thread    (import threading)
+        worker()    1326
+            -> copy.deepcopy    (import copy)
+            -> save_file_info_to_mongo    (this file, line 382)
+            -> self._post_ui    (this class, line 675)    x3
+            -> self._write_log    (this class, line 706)    x2
+    selected_record()    1130
+        -> self._item_records.get    (attribute of self (inherited or set at run time))
+        -> self.tree.selection    (attribute of self (inherited or set at run time))
+    shutdown()    1573
+        -> hasattr    (builtin)
+        -> int    (builtin)    x2
+        -> save_config    (this file, line 276)
+        -> self._tab_changed    (this class, line 1567)
+        -> self.height_var.get    (attribute of self (inherited or set at run time))
+        -> self.update_idletasks    (attribute of self (inherited or set at run time))
+        -> self.width_var.get    (attribute of self (inherited or set at run time))
+        -> self.window.winfo_height    (attribute of self (inherited or set at run time))
+        -> self.window.winfo_width    (attribute of self (inherited or set at run time))
+(module level)
+    -> Config    (this file, line 284)
+    -> main    (this file, line 1622)
+    -> os.path.abspath    (import os)
+    -> os.path.dirname    (import os)
+    -> os.path.join    (import os)
+    -> Path    (from pathlib import Path)    x2
+    -> Path(__file__).resolve    (method or call on an expression)
+    -> str    (builtin)    x4
+    -> sys.path.append    (import sys)
+    -> sys.path.insert    (import sys)
+    -> SystemExit    (builtin)
+    -> x_path.is_dir    (unknown, not imported or defined here)

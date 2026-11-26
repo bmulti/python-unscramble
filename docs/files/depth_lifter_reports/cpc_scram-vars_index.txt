@@ -1,0 +1,371 @@
+source_file = cpc_scram.py
+source_modified = 2026-11-22 17:22:17
+name: annotation = value    line numbers   (functions: name() with their variables indented; classes: first-last)
+
+AKA = 'SCRAMBLE'    185
+APP_DIR = os.path.dirname(os.path.abspath(__file__))    190
+APP_NAME = 'SCRAMBLE Python Versions'    188
+APP_VERSION = '2026-09-12'    189
+c = Config()    308
+CONFIG_PATH = os.path.join(APP_DIR, 'scram7.json')    191
+DEFAULT_CONFIG = {'ui_theme_name': 'Light Blue', 'ui_density': 'No…    198
+DESC = 'Python Code Versions Finder'    187
+description = 'Code browser utiltiy'    124
+gateway_controller = None    177
+LONG_DESC = 'SCRAMBLE scans a project for files matching conf…    192
+MongoClient = None    182
+named = 'Python Unscramble'    125
+PROGRAM = 'scram'    186
+project = 'Python'    123
+recordsfound = 0    309
+shared_path = Path(__file__).resolve().parent.parent    112
+TV_BROWSER = {'title': 'SCRAM File Versions', 'columns': ('mod…    473
+ui_choices = None    155
+ui_state = None    170
+version = '11'    126
+VERSION = '8'    184
+x_path = Path('X:\\cc_lib')    108
+_store_file_record()
+    document
+    existing
+    full_path
+    latest
+    project_name
+deep_merge()
+    key
+    result
+    value
+display_file_info()
+    client
+    records
+highlight_python_syntax()
+    builtins
+    comment_start
+    decorator
+    keywords
+    line
+    line_number
+    match
+    pattern
+    string_ranges
+    tag
+    word
+load_config()
+    cfg
+    loaded
+    source
+main()
+    root
+parse_args()
+    parser
+save_config()
+    target
+    temporary_path
+save_file_info_to_mongo()
+    _directories
+    app
+    cfg
+    clear_data
+    client
+    client_a_uri
+    clients
+    collection
+    collection_name
+    collections
+    db_name
+    directory
+    directory_path
+    end_mask
+    file_content
+    file_info
+    file_stat
+    filename
+    filenames
+    full_path
+    ignore_mask
+    label
+    no_store
+    one_copy
+    primary_client
+    processed
+    project_name
+    result
+    secondary_client
+    secondary_uri
+    source
+    start_mask
+    write_log
+class Config    284-305
+    self.cfg = cfg if cfg is not None else load_config()    287, 290
+class ScramApp    504-1591
+    self._all_records = []    525, 1006
+    self._code_fonts = (base, bold, italic)    1505
+    self._comboboxes = []    524
+    self._current_collection = app['DEFAULT_COLLECTION']    536, 1009
+    self._current_database = app['DEFAULT_DATABASE']    535, 1008
+    self._current_uri = app['DEFAULT_MONGO_URI']    534, 1007
+    self._item_records = {}    527
+    self._loading = False    528, 986, 1005, 1024
+    self._project_thread = None    530, 1252, 1295
+    self._scan_complete_status = None    531, 1019, 1331
+    self._scan_thread = None    529, 1337
+    self._ui_queue = queue.Queue()    532
+    self._visible_records = []    526, 1031
+    self.browser_tab = ttk.Frame(self.notebook)    562
+    self.cfg = load_config()    515, 1418
+    self.clear_data_var = tk.BooleanVar(value=as_bool(self.cfg['app'].get('…    769
+    self.code_text = tk.Text(code_frame, wrap='none', padx=10, pady=10…    642
+    self.colors = dict(self.host_context.get('colors') or theme_pal…    1487, 1490, 1492
+    self.config_tab = ttk.Frame(self.notebook)    565
+    self.config_vars = {}    757
+    self.connection_var = tk.StringVar(value=self._connection_label())    613
+    self.current_size_var = tk.StringVar(value='')    807, 836
+    self.density_var = tk.StringVar(value=self.cfg.get('ui_density', 'No…    796, 827
+    self.embedded = bool(embedded or not isinstance(master, (tk.Tk, t…    508
+    self.gateway_host = ttk.Frame(self.gateway_tab)    911
+    self.gateway_tab = ttk.Frame(self.notebook)    567
+    self.guide_collection_var = tk.StringVar()    722
+    self.guide_primary_var = tk.StringVar()    720
+    self.guide_records_var = tk.StringVar(value='0')    723
+    self.guide_secondary_var = tk.StringVar()    721
+    self.guide_selected_var = tk.StringVar(value='None')    724
+    self.guide_tab = ttk.Frame(self.notebook)    564
+    self.height_var = tk.StringVar(value=str(self.cfg.get('window_heigh…    802, 833
+    self.host_context = dict(host_context or {})    509
+    self.log_tab = ttk.Frame(self.notebook)    563
+    self.log_text = tk.Text(log_frame, wrap='word', state='disabled',…    664
+    self.no_store_var = tk.BooleanVar(value=as_bool(self.cfg['app'].get('…    768
+    self.notebook = ttk.Notebook(self)    559
+    self.one_copy_var = tk.BooleanVar(value=as_bool(self.cfg['app'].get('…    767
+    self.project_combo = ttk.Combobox(search, textvariable=self.project_fi…    600
+    self.project_filter_var = tk.StringVar(value='All')    599
+    self.scan_mode_var = tk.StringVar(value=self._scan_mode_label())    617
+    self.search_code_var = tk.BooleanVar(value=False)    610
+    self.search_name_var = tk.BooleanVar(value=True)    609
+    self.search_var = tk.StringVar()    604
+    self.show_gateway = True if not self.embedded else bool(self.host_con…    510
+    self.show_ui_choices = True if not self.embedded else bool(self.host_con…    511
+    self.status_var = tk.StringVar(value='Ready')    652
+    self.theme_var = tk.StringVar(value=self.cfg.get('ui_theme_name', …    795, 824
+    self.tree = build_treeview(tree_frame, TV_BROWSER, owner=self…    628
+    self.ui_choices_controller = ui_choices.attach(self.ui_tab, window=self.window…    783, 814
+    self.ui_tab = ttk.Frame(self.notebook)    566
+    self.width_var = tk.StringVar(value=str(self.cfg.get('window_width…    797, 830
+    self.window = master.winfo_toplevel()    512
+    __init__()
+        app
+        host_density
+        host_theme
+    _apply_theme()
+        density
+        theme_name
+    _attach_gateway_controller()
+        arguments
+        attach_function
+        controller_class
+        lowered
+        name
+        parameter
+        signature
+    _build_browser_tab()
+        browser_notes
+        code_frame
+        code_horizontal
+        code_vertical
+        paned
+        search
+        search_entry
+        toolbar
+        tree_frame
+    _build_config_tab()
+        canvas
+        fields
+        form
+        key
+        label
+        outer
+        row
+        scrollbar
+        variable
+        window_item
+    _build_guide_tab()
+        frame
+        label
+        process
+        row
+        state
+        variable
+    _build_log_tab()
+        log_frame
+        log_vertical
+        toolbar
+    _build_ui_choices_tab()
+        appearance
+        density_frame
+        outer
+        size_frame
+        theme_box
+        value
+    _choose_scan_directory()
+        current
+        selected
+    _configure_code_tags()
+        background
+        base
+        bold
+        colour
+        current
+        font
+        foreground
+        italic
+        palette
+        size
+        tag
+    _connection_label()
+        app
+    _display_records()
+        children
+        index
+        item
+        record
+        values
+    _drain_ui_queue()
+        args
+        callback
+        kwargs
+    _gateway_fallback()
+        child
+    _gateway_path()
+        configured
+    _records_loaded()
+        recordsfound
+    _register_and_style_comboboxes()
+        combo
+        field
+        foreground
+        found
+        style
+        walk()
+            child
+    _restore_tab()
+        index
+        wanted
+    _safe_project_filename()
+        safe_name
+    _scan_mode_label()
+        app
+        clearing
+        end_mask
+        mask
+        start_mask
+        storing
+        versions
+    _selected_project()
+        project_name
+    _update_guide_state()
+        app
+    _update_project_choices()
+        projects
+        selected
+        values
+    apply_search()
+        fields
+        project_name
+        project_records
+        query
+        record
+        results
+        terms
+    apply_ui_choices()
+        height
+        host_density
+        host_theme
+        width
+    backup_project()
+        backup_directory
+        collection
+        database
+        project_name
+        project_records
+        safe_name
+        source_root
+        timestamp
+        uri
+        zip_path
+        worker()
+            archive
+            archive_path
+            backup_collection
+            client
+            current
+            file_stat
+            full_path
+            manifest
+            missing_files
+            record
+            relative_path
+            stored_files
+            unique_records
+    clear_project()
+        clearing_all
+        collection
+        confirmed
+        database
+        project_name
+        target_text
+        uri
+        worker()
+            client
+            label
+            query
+            result
+    connect_custom()
+        app
+        collection
+        database
+        uri
+    copy_code_selection()
+        selected_text
+    copy_tree_selection()
+        rows
+        selection
+    edit_default()
+        editor_key
+    edit_selected_file()
+        record
+    load_records()
+        app
+        collection
+        database
+        uri
+        worker()
+            client
+            records
+    on_double_click()
+        item
+    on_treeview_select()
+        path
+        record
+    reload_config()
+        key
+        variable
+    run_selected_file()
+        file_path
+        flags
+        python_executable
+        record
+    save_config_from_ui()
+        key
+        value
+        variable
+    scan_files()
+        app
+        confirmed
+        initial_project
+        project_name
+        selected_project
+        worker()
+            complete_status
+            processed
+    selected_record()
+        selection

@@ -1,0 +1,120 @@
+source_file = cpc_scram.py
+source_modified = 2026-11-22 17:22:17
+import   origin   line;  indented: external name   xN calls   called by (def paths)
+
+from pathlib import Path    standard library    line 105    CAUTION: source file not named at the call
+        Path    x2    called by (module level)
+import sys    standard library    line 106
+        sys.modules.get    x1    called by ScramApp._build_ui_choices_tab
+        sys.path.append    x1    called by (module level)
+        sys.path.insert    x1    called by (module level)
+        sys.platform.startswith    x2    called by ScramApp._open_external, ScramApp.run_selected_file
+import argparse    standard library    line 128
+        argparse.ArgumentParser    x1    called by parse_args
+import copy    standard library    line 129
+        copy.deepcopy    x4    called by load_config, ScramApp.backup_project, ScramApp.scan_files.worker
+import inspect    standard library    line 130
+        inspect.signature    x1    called by ScramApp._attach_gateway_controller
+import json    standard library    line 131
+        json.dump    x1    called by save_config
+        json.dumps    x1    called by ScramApp.backup_project.worker
+        json.load    x1    called by load_config
+import os    standard library    line 132
+        os.makedirs    x1    called by ScramApp.backup_project.worker
+        os.path.abspath    x3    called by (module level), ScramApp.backup_project, ScramApp.backup_project.worker
+        os.path.basename    x2    called by ScramApp.backup_project.worker
+        os.path.dirname    x3    called by (module level), ScramApp.launch_file_editor, ScramApp.run_selected_file
+        os.path.isabs    x1    called by ScramApp._gateway_path
+        os.path.isdir    x2    called by save_file_info_to_mongo, ScramApp.backup_project
+        os.path.isfile    x5    called by load_config, ScramApp.backup_project.worker, ScramApp.launch_file_editor, ScramApp.run_selected_file
+        os.path.join    x6    called by (module level), save_file_info_to_mongo, ScramApp._gateway_path, ScramApp.backup_project, ScramApp.backup_project.worker
+        os.path.relpath    x1    called by ScramApp.backup_project.worker
+        os.replace    x1    called by save_config
+        os.startfile    x1    called by ScramApp._open_external
+        os.stat    x2    called by save_file_info_to_mongo, ScramApp.backup_project.worker
+        os.walk    x1    called by save_file_info_to_mongo
+import queue    standard library    line 133
+        queue.Queue    x1    called by ScramApp.__init__
+import re    standard library    line 134
+        re.finditer    x2    called by highlight_python_syntax
+        re.search    x2    called by highlight_python_syntax
+        re.sub    x1    called by ScramApp._safe_project_filename
+import subprocess    standard library    line 135
+        subprocess.Popen    x4    called by ScramApp._open_external, ScramApp.launch_file_editor, ScramApp.run_selected_file
+import sys    standard library    line 136
+        sys.modules.get    x1    called by ScramApp._build_ui_choices_tab
+        sys.path.append    x1    called by (module level)
+        sys.path.insert    x1    called by (module level)
+        sys.platform.startswith    x2    called by ScramApp._open_external, ScramApp.run_selected_file
+import threading    standard library    line 137
+        threading.Thread    x4    called by ScramApp.backup_project, ScramApp.clear_project, ScramApp.load_records, ScramApp.scan_files
+import time    standard library    line 138
+        time.localtime    x1    called by ScramApp._format_time
+        time.strftime    x2    called by ScramApp._format_time, ScramApp.backup_project
+        time.time    x1    called by ScramApp.backup_project.worker
+import tkinter as tk    standard library    line 139
+        tk.BooleanVar    x5    called by ScramApp._build_browser_tab, ScramApp._build_config_tab
+        tk.Canvas    x1    called by ScramApp._build_config_tab
+        tk.StringVar    x20    called by ScramApp._build_browser_tab, ScramApp._build_config_tab, ScramApp._build_guide_tab, ScramApp._build_ui_choices_tab
+        tk.Text    x2    called by ScramApp._build_browser_tab, ScramApp._build_log_tab
+        tk.Tk    x1    called by main
+import tkinter.font as tkFont    standard library    line 140
+        tkFont.Font    x3    called by ScramApp._configure_code_tags
+import zipfile    standard library    line 141
+        zipfile.ZipFile    x1    called by ScramApp.backup_project.worker
+from tkinter import filedialog    standard library    line 142    CAUTION: source file not named at the call
+        filedialog.askdirectory    x1    called by ScramApp._choose_scan_directory
+from tkinter import messagebox    standard library    line 142    CAUTION: source file not named at the call
+        messagebox.askyesno    x2    called by ScramApp.clear_project, ScramApp.scan_files
+        messagebox.showerror    x9    called by ScramApp._records_failed, ScramApp.backup_project, ScramApp.connect_custom, ScramApp.launch_file_editor, ScramApp.run_selected_file, ScramApp.save_config_from_ui
+        messagebox.showinfo    x1    called by ScramApp.backup_project.worker.complete
+        messagebox.showwarning    x10    called by ScramApp._selected_project, ScramApp.apply_ui_choices, ScramApp.backup_project, ScramApp.backup_project.worker.complete, ScramApp.clear_project, ScramApp.edit_selected_file, ScramApp.run_selected_file, ScramApp.scan_files
+from tkinter import simpledialog    standard library    line 142    CAUTION: source file not named at the call
+        simpledialog.askstring    x4    called by ScramApp.connect_custom, ScramApp.scan_files
+from tkinter import ttk    standard library    line 142    CAUTION: source file not named at the call
+        ttk.Button    x17    called by ScramApp._build_browser_tab, ScramApp._build_config_tab, ScramApp._build_log_tab, ScramApp._build_ui_choices_tab, ScramApp._gateway_fallback
+        ttk.Checkbutton    x5    called by ScramApp._build_browser_tab, ScramApp._build_config_tab
+        ttk.Combobox    x2    called by ScramApp._build_browser_tab, ScramApp._build_ui_choices_tab
+        ttk.Entry    x5    called by ScramApp._build_browser_tab, ScramApp._build_config_tab, ScramApp._build_ui_choices_tab
+        ttk.Frame    x19    called by ScramApp._build_browser_tab, ScramApp._build_config_tab, ScramApp._build_gateway_tab, ScramApp._build_guide_tab, ScramApp._build_log_tab, ScramApp._build_ui, ScramApp._build_ui_choices_tab
+        ttk.Label    x24    called by ScramApp._build_browser_tab, ScramApp._build_config_tab, ScramApp._build_guide_tab, ScramApp._build_log_tab, ScramApp._build_ui_choices_tab, ScramApp._gateway_fallback
+        ttk.LabelFrame    x4    called by ScramApp._build_guide_tab, ScramApp._build_ui_choices_tab
+        ttk.Notebook    x1    called by ScramApp._build_ui
+        ttk.Panedwindow    x1    called by ScramApp._build_browser_tab
+        ttk.Radiobutton    x1    called by ScramApp._build_ui_choices_tab
+        ttk.Scrollbar    x4    called by ScramApp._build_browser_tab, ScramApp._build_config_tab, ScramApp._build_log_tab
+        ttk.Style    x1    called by ScramApp._register_and_style_comboboxes
+import cpc_ui_choices as ui_choices    third party or your own file    line 153
+        ui_choices.attach    x1    called by ScramApp._build_ui_choices_tab
+from cpc_ui_theme import apply_theme    third party or your own file    line 157    CAUTION: source file not named at the call
+        apply_theme    x1    called by ScramApp._apply_theme
+from cpc_ui_theme import apply_app_icon    third party or your own file    line 157    CAUTION: source file not named at the call
+        apply_app_icon    x1    called by ScramApp.__init__
+from cpc_ui_theme import theme_names    third party or your own file    line 157    CAUTION: source file not named at the call
+        theme_names    x1    called by ScramApp._build_ui_choices_tab
+from cpc_ui_theme import normalize_theme_name    third party or your own file    line 157    CAUTION: source file not named at the call
+        normalize_theme_name    x5    called by load_config, ScramApp.__init__, ScramApp._apply_theme, ScramApp.apply_ui_choices
+from cpc_ui_theme import density_names    third party or your own file    line 157    CAUTION: source file not named at the call
+        density_names    x1    called by ScramApp._build_ui_choices_tab
+from cpc_ui_theme import normalize_density_name    third party or your own file    line 157    CAUTION: source file not named at the call
+        normalize_density_name    x5    called by load_config, ScramApp.__init__, ScramApp._apply_theme, ScramApp.apply_ui_choices
+from cpc_ui_theme import theme_palette    third party or your own file    line 157    CAUTION: source file not named at the call
+        theme_palette    x3    called by ScramApp._apply_theme, ScramApp._configure_code_tags
+import cpc_ui_state as ui_state    third party or your own file    line 168
+        (no calls through this import)
+from cpc_treeviews import build_treeview    third party or your own file    line 172    CAUTION: source file not named at the call
+        build_treeview    x1    called by ScramApp._build_browser_tab
+from cpc_treeviews import insert_row    third party or your own file    line 172    CAUTION: source file not named at the call
+        insert_row    x1    called by ScramApp._display_records
+import gateway_controller    third party or your own file    line 175
+        (no calls through this import)
+from pymongo import MongoClient    third party or your own file    line 180    CAUTION: source file not named at the call
+        MongoClient    x6    called by display_file_info, save_file_info_to_mongo, ScramApp.backup_project.worker, ScramApp.clear_project.worker, ScramApp.load_records.worker
+
+Unknown source (not imported or defined in this file)
+    unknown, not imported or defined here
+        c.replace    x4    called by ScramApp.__init__, ScramApp._choose_scan_directory, ScramApp.reload_config, ScramApp.save_config_from_ui
+        found.append    x1    called by ScramApp._register_and_style_comboboxes.walk
+        item.get    x3    called by _store_file_record, display_file_info, ScramApp.load_records.worker
+        walk    x1    called by ScramApp._register_and_style_comboboxes.walk
+        x_path.is_dir    x1    called by (module level)
